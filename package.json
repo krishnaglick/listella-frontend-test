@@ -5,7 +5,7 @@
   "main": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pub": "cp package.json ./dist/package.json && cp index.scss ./dist/index.scss && npm publish ./dist --access public"
+    "pub": "tsc && cp package.json ./dist/package.json && cp index.scss ./dist/index.scss && npm publish ./dist --access public"
   },
   "author": "",
   "license": "ISC",
