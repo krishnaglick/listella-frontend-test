@@ -1,0 +1,20 @@
+{
+  "name": "listella-lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/react": "^18.2.6",
+    "localforage": "^1.10.0",
+    "react": "^18.2.0",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "sass": "^1.62.1",
+    "typescript": "^5.0.4"
+  }
+}
