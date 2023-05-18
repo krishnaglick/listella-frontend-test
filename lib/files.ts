@@ -1,4 +1,4 @@
-import { LocalStorageInstanceTypes, localStorage } from "./localforage";
+import { LocalStorageInstanceTypes, localStorage } from "./local-forage";
 
 export type File = {
   file: string;

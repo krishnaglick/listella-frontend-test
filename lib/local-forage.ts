@@ -12,10 +12,7 @@ const VERSIONS: LocalStorageMap<number> = {
   [LocalStorageInstanceTypes["files"]]: 1,
 };
 
-function generateStorageName(
-  type: LocalStorageInstanceTypes,
-  version = VERSIONS[type as LocalStorageInstanceTypes]
-) {
+function generateStorageName(type: LocalStorageInstanceTypes, version = VERSIONS[type as LocalStorageInstanceTypes]) {
   return `${type}-${version}`;
 }
 
@@ -24,10 +21,9 @@ class LocalStorageService {
 
   constructor() {
     Object.keys(LocalStorageInstanceTypes).forEach((type) => {
-      this.instances[type as LocalStorageInstanceTypes] =
-        localForage.createInstance({
-          name: generateStorageName(type as LocalStorageInstanceTypes),
-        });
+      this.instances[type as LocalStorageInstanceTypes] = localForage.createInstance({
+        name: generateStorageName(type as LocalStorageInstanceTypes),
+      });
     });
     this.reapOldDocuments();
   }
@@ -47,9 +43,7 @@ class LocalStorageService {
             .dropInstance({
               name: generateStorageName(type as LocalStorageInstanceTypes, i),
             })
-            .catch((err) =>
-              console.error("Error Removing Instance", err, type, i)
-            );
+            .catch((err) => console.error("Error Removing Instance", err, type, i));
         }
       }
     });

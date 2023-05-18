@@ -16,12 +16,11 @@ export const Uploader = () => {
   const [processedFiles, setProcessedFiles] = useState<File[]>([]);
 
   const upload = useCallback(async () => {
-    if (!uploader.current?.files) {
+    if (!processedFiles.length) {
       return;
     }
     setActionRunning(true);
     await saveFilesToStorage(homeName, processedFiles);
-    uploader.current.files = null;
     setFileCount(0);
     setActionRunning(false);
     setProcessedFiles([]);
